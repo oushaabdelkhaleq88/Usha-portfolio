@@ -138,12 +138,16 @@ function AboutSection() {
             order: 1
           }} className="lg:order-2 lg:max-w-none lg:w-96 lg:h-96">
             <img 
-              src={logo} 
+              src={process.env.PUBLIC_URL + "/logo.png"} 
               alt="Ashraf Abdelkaleq"
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover"
+              }}
+              onError={(e) => {
+                console.error("Image failed to load:", e.target.src);
+                e.target.style.display = "none";
               }}
             />
           </div>
