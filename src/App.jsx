@@ -33,7 +33,7 @@ function HeroSection() {
       }}>
         <SplitText
           text="Hello, I am Ashraf Abdelkaleq"
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug"
+          className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug"
           style={{ 
             wordBreak: "keep-all",
             overflowWrap: "break-word",
@@ -63,7 +63,7 @@ function HeroSection() {
       }}>
         <SplitText
           text="Young web developer specializing in front-end and back-end development, with a passion for creating beautiful user experiences"
-          className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4"
+          className="text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4"
           style={{ 
             wordBreak: "keep-all",
             overflowWrap: "break-word",
@@ -391,7 +391,7 @@ function ContactSection() {
           marginTop: "2rem"
         }} className="sm:pt-8 sm:mt-16">
           <p className="text-white/60 text-xs sm:text-sm md:text-base px-2">
-            © 2025 Ashraf Abdelkaleq. Built with React and lots of ☕
+            © 2025 Ashraf Abdelkaleq. All rights reserved.
           </p>
         </div>
       </div>
@@ -416,7 +416,7 @@ export default function App() {
         <Silk
           speed={15}
           scale={1}
-          color="abcdef"
+          color="5b6f82"
           noiseIntensity={0}
           rotation={2.40}
         />
