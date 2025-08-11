@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/elements/NavBar.jsx";
 import SplitText from "./components/TextAnimations/SplitText";
 import Silk from "./components/Backgrounds/Silk.jsx";
+import logo from "./logo.png";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -137,7 +138,7 @@ function AboutSection() {
             order: 1
           }} className="lg:order-2 lg:max-w-none lg:w-96 lg:h-96">
             <img 
-              src="/logo.png" 
+              src={logo} 
               alt="Ashraf Abdelkaleq"
               style={{
                 width: "100%",
