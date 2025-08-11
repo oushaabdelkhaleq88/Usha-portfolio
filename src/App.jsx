@@ -33,7 +33,7 @@ function HeroSection() {
       }}>
         <SplitText
           text="Hello, I am Ashraf Abdelkaleq"
-          className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug"
+          className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug"
           style={{ 
             wordBreak: "keep-all",
             overflowWrap: "break-word",
@@ -63,7 +63,7 @@ function HeroSection() {
       }}>
         <SplitText
           text="Young web developer specializing in front-end and back-end development, with a passion for creating beautiful user experiences"
-          className="text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4"
+          className="text-2xl sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4"
           style={{ 
             wordBreak: "keep-all",
             overflowWrap: "break-word",
@@ -129,8 +129,8 @@ function AboutSection() {
         className="lg:grid-cols-2 lg:gap-8">
           {/* Text Content */}
           <div style={{ order: 2 }} className="lg:order-1">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-snug break-words px-2">About Me</h2>
-            <div className="text-xs sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed space-y-3 sm:space-y-4 px-2">
+            <h2 className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-snug break-words px-2">About Me</h2>
+            <div className="text-2xl sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed space-y-3 sm:space-y-4 px-2">
               <p>
                 I am a Student at STEM School for science and technology and also
                 attending Digital Egypt Cubs Initiative and I attend the track of 
@@ -235,7 +235,7 @@ function SkillsSection() {
                 <div style={{
                   width: `${skill.level}%`,
                   height: "100%",
-                  backgroundColor: "#6B7280",
+                  backgroundColor: "#b8c3cf",
                   borderRadius: "4px",
                   transition: "width 1s ease-in-out"
                 }}></div>
