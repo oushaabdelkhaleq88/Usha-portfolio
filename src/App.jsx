@@ -416,7 +416,7 @@ export default function App() {
         <Silk
           speed={15}
           scale={1}
-          color="5b6f82"
+          color="123456"
           noiseIntensity={0}
           rotation={2.40}
         />
