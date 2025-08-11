@@ -130,7 +130,7 @@ function AboutSection() {
           {/* Text Content */}
           <div style={{ order: 2 }} className="lg:order-1">
             <h2 className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-snug break-words px-2">About Me</h2>
-            <div className="text-2xl sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed space-y-3 sm:space-y-4 px-2">
+            <div className="text-xl sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed space-y-3 sm:space-y-4 px-2">
               <p>
                 I am a Student at STEM School for science and technology and also
                 attending Digital Egypt Cubs Initiative and I attend the track of 
