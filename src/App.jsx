@@ -22,14 +22,27 @@ function HeroSection() {
       padding: "1rem"
     }}>
       {/* Main Title */}
-      <div style={{ textAlign: "center", marginBottom: "1.5rem", width: "100%", maxWidth: "1200px" }}>
+      <div style={{ 
+        textAlign: "center", 
+        marginBottom: "1.5rem", 
+        width: "100%", 
+        maxWidth: "1200px",
+        wordWrap: "break-word",
+        overflowWrap: "break-word",
+        hyphens: "auto"
+      }}>
         <SplitText
           text="Hello, I am Ashraf Abdelkaleq"
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug break-words"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 px-4 leading-snug"
+          style={{ 
+            wordBreak: "keep-all",
+            overflowWrap: "break-word",
+            whiteSpace: "normal"
+          }}
           delay={100}
           duration={0.6}
           ease="power3.out"
-          splitType="chars"
+          splitType="words"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
@@ -39,14 +52,27 @@ function HeroSection() {
       </div>
 
       {/* Subtitle */}
-      <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto", padding: "0 1rem", width: "100%" }}>
+      <div style={{ 
+        textAlign: "center", 
+        maxWidth: "900px", 
+        margin: "0 auto", 
+        padding: "0 1rem", 
+        width: "100%",
+        wordWrap: "break-word",
+        overflowWrap: "break-word"
+      }}>
         <SplitText
           text="Young web developer specializing in front-end and back-end development, with a passion for creating beautiful user experiences"
-          className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4 break-words"
+          className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-white/90 leading-relaxed px-4"
+          style={{ 
+            wordBreak: "keep-all",
+            overflowWrap: "break-word",
+            whiteSpace: "normal"
+          }}
           delay={10}
           duration={0.6}
           ease="power3.out"
-          splitType="chars"
+          splitType="words"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
