@@ -366,7 +366,7 @@ function ContactSection() {
           marginBottom: "2rem",
           padding: "0 0.5rem"
         }} className="sm:gap-4 sm:mb-12">
-          <a href="mailto:your.email@example.com" 
+          <a href="mailto:ashrafabdelkhaleqali@gmail.com" 
              className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-all duration-300 text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">
             Send Email
           </a>
