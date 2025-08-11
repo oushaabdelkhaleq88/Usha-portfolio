@@ -19,13 +19,13 @@ function HeroSection() {
       alignItems: "center",
       position: "relative",
       zIndex: 2,
-      padding: "1rem"
+      padding: "2rem 1rem"
     }}>
       {/* Main Title */}
-      <div style={{ textAlign: "center", marginBottom: "1.5rem", width: "100%", maxWidth: "1200px" }}>
+      <div style={{ textAlign: "center", marginBottom: "2rem" }}>
         <SplitText
           text="Hello, I am Ashraf Abdelkaleq"
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 px-2 leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 px-4"
           delay={100}
           duration={0.6}
           ease="power3.out"
@@ -39,10 +39,10 @@ function HeroSection() {
       </div>
 
       {/* Subtitle */}
-      <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto", padding: "0 1rem", width: "100%" }}>
+      <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto", padding: "0 1rem" }}>
         <SplitText
           text="Young web developer specializing in front-end and back-end development, with a passion for creating beautiful user experiences"
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light text-white/90 leading-relaxed px-2"
+          className="text-lg sm:text-xl md:text-2xl font-light text-white/90"
           delay={10}
           duration={0.6}
           ease="power3.out"
@@ -57,23 +57,22 @@ function HeroSection() {
 
       {/* CTA Buttons */}
       <div style={{ 
-        marginTop: "2rem", 
+        marginTop: "3rem", 
         display: "flex", 
-        gap: "0.75rem", 
+        gap: "1rem", 
         flexWrap: "wrap",
         justifyContent: "center",
-        padding: "0 1rem",
-        width: "100%"
+        padding: "0 1rem"
       }}>
         <button 
           onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-          className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 bg-gray-800/80 backdrop-blur-sm text-white border border-gray-600/50 rounded-lg hover:bg-gray-700/90 transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
+          className="px-6 sm:px-8 py-3 bg-gray-800/80 backdrop-blur-sm text-white border border-gray-600/50 rounded-lg hover:bg-gray-700/90 transition-all duration-300 text-sm sm:text-base"
         >
           View My Work
         </button>
         <button 
           onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-          className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
+          className="px-6 sm:px-8 py-3 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-all duration-300 text-sm sm:text-base"
         >
           Get In Touch
         </button>
@@ -87,7 +86,7 @@ function AboutSection() {
   return (
     <section id="about" style={{ 
       minHeight: "100vh", 
-      padding: "2rem 1rem",
+      padding: "4rem 1rem",
       display: "flex",
       alignItems: "center",
       position: "relative",
@@ -97,14 +96,14 @@ function AboutSection() {
         <div style={{ 
           display: "grid", 
           gridTemplateColumns: "1fr", 
-          gap: "2rem", 
+          gap: "3rem", 
           alignItems: "center" 
         }}
-        className="lg:grid-cols-2 lg:gap-8">
+        className="lg:grid-cols-2 lg:gap-16">
           {/* Text Content */}
           <div style={{ order: 2 }} className="lg:order-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">About Me</h2>
-            <div className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">About Me</h2>
+            <div className="text-base sm:text-lg text-white/80 leading-relaxed space-y-4">
               <p>
                 I am a Student at STEM School for science and technology and also
                 attending Digital Egypt Cubs Initiative and I attend the track of 
@@ -129,7 +128,7 @@ function AboutSection() {
           {/* Profile Image */}
           <div style={{
             width: "100%",
-            maxWidth: "280px",
+            maxWidth: "350px",
             aspectRatio: "1",
             borderRadius: "20px",
             border: "2px solid rgba(255,255,255,0.2)",
@@ -137,7 +136,7 @@ function AboutSection() {
             backdropFilter: "blur(10px)",
             margin: "0 auto",
             order: 1
-          }} className="sm:max-w-sm lg:order-2 lg:max-w-none lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+          }} className="lg:order-2 lg:max-w-none lg:w-96 lg:h-96">
             <img 
               src={process.env.PUBLIC_URL + "/logo.png"} 
               alt="Ashraf Abdelkaleq"
@@ -172,39 +171,39 @@ function SkillsSection() {
   return (
     <section id="skills" style={{ 
       minHeight: "100vh", 
-      padding: "2rem 1rem",
+      padding: "4rem 1rem",
       display: "flex",
       alignItems: "center",
       position: "relative",
       zIndex: 2
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 md:mb-12 text-center leading-tight">Skills & Technologies</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">Skills & Technologies</h2>
         
         <div style={{ 
           display: "grid", 
           gridTemplateColumns: "1fr",
-          gap: "1rem" 
-        }} className="sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+          gap: "1.5rem" 
+        }} className="sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, index) => (
             <div key={skill.name} style={{
               backgroundColor: "rgba(255,255,255,0.1)",
-              padding: "1rem",
+              padding: "1.5rem",
               borderRadius: "15px",
               border: "1px solid rgba(255,255,255,0.2)",
               backdropFilter: "blur(10px)"
-            }} className="sm:p-6">
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }} className="sm:mb-4">
-                <span className="text-white font-semibold text-sm sm:text-base md:text-lg">{skill.name}</span>
-                <span className="text-white/70 text-xs sm:text-sm md:text-base">{skill.level}%</span>
+            }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
+                <span className="text-white font-semibold text-base sm:text-lg">{skill.name}</span>
+                <span className="text-white/70 text-sm sm:text-base">{skill.level}%</span>
               </div>
               <div style={{
                 width: "100%",
-                height: "6px",
+                height: "8px",
                 backgroundColor: "rgba(255,255,255,0.2)",
                 borderRadius: "4px",
                 overflow: "hidden"
-              }} className="sm:h-2">
+              }}>
                 <div style={{
                   width: `${skill.level}%`,
                   height: "100%",
@@ -245,20 +244,20 @@ function ProjectsSection() {
   return (
     <section id="projects" style={{ 
       minHeight: "100vh", 
-      padding: "2rem 1rem",
+      padding: "4rem 1rem",
       display: "flex",
       alignItems: "center",
       position: "relative",
       zIndex: 2
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 md:mb-12 text-center leading-tight">My Projects</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">My Projects</h2>
         
         <div style={{ 
           display: "grid", 
           gridTemplateColumns: "1fr",
-          gap: "1.5rem" 
-        }} className="md:grid-cols-2 md:gap-8">
+          gap: "2rem" 
+        }} className="lg:grid-cols-2">
           {projects.map((project, index) => (
             <div key={index} style={{
               backgroundColor: "rgba(255,255,255,0.1)",
@@ -281,26 +280,26 @@ function ProjectsSection() {
             >
               {/* Project Image Placeholder */}
               <div style={{
-                height: "160px",
+                height: "200px",
                 backgroundColor: "rgba(255,255,255,0.05)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
-              }} className="sm:h-48 md:h-56">
-                <span className="text-white/50 text-sm sm:text-base md:text-lg">Project Screenshot</span>
+              }} className="sm:h-64">
+                <span className="text-white/50 text-base sm:text-lg">Project Screenshot</span>
               </div>
               
               {/* Project Content */}
-              <div style={{ padding: "1rem" }} className="sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 leading-tight">{project.title}</h3>
-                <p className="text-white/80 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm md:text-base">{project.description}</p>
-                <p className="text-blue-300 text-xs sm:text-sm mb-3 sm:mb-4">{project.tech}</p>
+              <div style={{ padding: "1.5rem" }} className="sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{project.title}</h3>
+                <p className="text-white/80 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                <p className="text-blue-300 text-xs sm:text-sm mb-4">{project.tech}</p>
                 
-                <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                  <button className="px-3 sm:px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
+                <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                  <button className="px-3 sm:px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-colors text-sm sm:text-base">
                     Live Demo
                   </button>
-                  <button className="px-3 sm:px-4 py-2 bg-transparent border border-gray-500/50 text-white rounded-lg hover:bg-gray-700/30 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
+                  <button className="px-3 sm:px-4 py-2 bg-transparent border border-gray-500/50 text-white rounded-lg hover:bg-gray-700/30 transition-colors text-sm sm:text-base">
                     GitHub
                   </button>
                 </div>
@@ -318,15 +317,15 @@ function ContactSection() {
   return (
     <section id="contact" style={{ 
       minHeight: "100vh", 
-      padding: "2rem 1rem",
+      padding: "4rem 1rem",
       display: "flex",
       alignItems: "center",
       position: "relative",
       zIndex: 2
     }}>
       <div style={{ maxWidth: "800px", margin: "0 auto", width: "100%", textAlign: "center" }}>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-tight">Let's Work Together</h2>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 mb-6 sm:mb-8 md:mb-12 leading-relaxed px-2">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8">Let's Work Together</h2>
+        <p className="text-lg sm:text-xl text-white/80 mb-8 sm:mb-12 leading-relaxed px-4">
           I'm always open to discussing new opportunities, interesting projects, 
           or just having a chat about web development. Let's create something amazing together!
         </p>
@@ -334,25 +333,25 @@ function ContactSection() {
         <div style={{ 
           display: "flex", 
           justifyContent: "center", 
-          gap: "0.75rem", 
+          gap: "1rem", 
           flexWrap: "wrap", 
-          marginBottom: "2rem",
-          padding: "0 0.5rem"
-        }} className="sm:gap-4 sm:mb-12">
+          marginBottom: "3rem",
+          padding: "0 1rem"
+        }}>
           <a href="mailto:your.email@example.com" 
-             className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-all duration-300 text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">
+             className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-all duration-300 text-base sm:text-lg font-semibold">
             Send Email
           </a>
           <a href="https://www.linkedin.com/in/ashraf-abdelkhaleq-857850375" 
              target="_blank" 
              rel="noopener noreferrer"
-             className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gray-700/60 backdrop-blur-sm text-white border border-gray-500/50 rounded-lg hover:bg-gray-600/70 transition-all duration-300 text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">
+             className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-700/60 backdrop-blur-sm text-white border border-gray-500/50 rounded-lg hover:bg-gray-600/70 transition-all duration-300 text-base sm:text-lg font-semibold">
             LinkedIn
           </a>
           <a href="https://github.com/oushaabdelkhaleq88" 
              target="_blank" 
              rel="noopener noreferrer"
-             className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gray-700/60 backdrop-blur-sm text-white border border-gray-500/50 rounded-lg hover:bg-gray-600/70 transition-all duration-300 text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">
+             className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-700/60 backdrop-blur-sm text-white border border-gray-500/50 rounded-lg hover:bg-gray-600/70 transition-all duration-300 text-base sm:text-lg font-semibold">
             GitHub
           </a>
         </div>
@@ -360,10 +359,10 @@ function ContactSection() {
         {/* Footer */}
         <div style={{ 
           borderTop: "1px solid rgba(255,255,255,0.2)", 
-          paddingTop: "1.5rem",
-          marginTop: "2rem"
-        }} className="sm:pt-8 sm:mt-16">
-          <p className="text-white/60 text-xs sm:text-sm md:text-base px-2">
+          paddingTop: "2rem",
+          marginTop: "4rem"
+        }}>
+          <p className="text-white/60 text-sm sm:text-base">
             © 2025 Ashraf Abdelkaleq. Built with React and lots of ☕
           </p>
         </div>
