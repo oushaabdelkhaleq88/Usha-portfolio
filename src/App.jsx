@@ -434,13 +434,13 @@ function ProjectsSection() {
       description: "A modern Japanese restaurant website showcasing our menu, flavors, and culture with a sleek, responsive design.",
       tech: "React, JavaScript, CSS, Tailwind CSS, Vite",
       images: [
-        "/screenshots/ONIGIRI/1.jpg",
-        "/screenshots/ONIGIRI/2.png", 
-        "/screenshots/ONIGIRI/3.png",
-        "/screenshots/ONIGIRI/4.png",
-        "/screenshots/ONIGIRI/5.png",
-        "/screenshots/ONIGIRI/6.png",
-        "/screenshots/ONIGIRI/7.png"
+        "../public/screenshots/ONIGIRI/1.jpg",
+        "../public/screenshots/ONIGIRI/2.png", 
+        "../public/screenshots/ONIGIRI/3.png",
+        "../public/screenshots/ONIGIRI/4.png",
+        "../public/screenshots/ONIGIRI/5.png",
+        "../public/screenshots/ONIGIRI/6.png",
+        "../public/screenshots/ONIGIRI/7.png"
       ],
       liveLink: "https://oushaabdelkhaleq88.github.io/ONIGIRI", // Fixed: This is now the live site
       githubLink: "https://github.com/oushaabdelkhaleq88/ONIGIRI" // This remains the GitHub repo
