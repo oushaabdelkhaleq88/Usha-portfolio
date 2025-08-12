@@ -1,8 +1,11 @@
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/elements/NavBar.jsx";
 import SplitText from "./components/TextAnimations/SplitText";
 import Silk from "./components/Backgrounds/Silk.jsx";
 import logo from "./logo.png";
+
+
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -248,51 +251,244 @@ function SkillsSection() {
   );
 }
 
+// Image Carousel Component
+function ImageCarousel({ images, projectTitle }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <div style={{
+      position: "relative",
+      minHeight: "250px",
+      backgroundColor: "rgba(0,0,0,0.1)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      overflow: "visible"
+    }} className="sm:min-h-56 md:min-h-64 lg:min-h-72">
+      
+      {images && images.length > 0 ? (
+        <>
+          {/* Current Image */}
+          <img 
+            src={images[currentIndex]} 
+            alt={`${projectTitle} screenshot ${currentIndex + 1}`}
+            style={{
+              width: "100%",
+              height: "auto",
+              maxHeight: "100%",
+              objectFit: "contain",
+              transition: "opacity 0.3s ease"
+            }}
+
+            onError={(e) => {
+              console.error("Image failed to load:", e.target.src);
+              e.target.style.display = "none";
+            }}
+          />
+          
+          {/* Navigation Arrows - Only show if more than 1 image */}
+          {images.length > 1 && (
+            <>
+              {/* Left Arrow */}
+              <button 
+                onClick={prevImage}
+                style={{
+                  position: "absolute",
+                  left: "8px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  backgroundColor: "rgba(0,0,0,0.7)",
+                  border: "none",
+                  borderRadius: "50%",
+                  width: "32px",
+                  height: "32px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  zIndex: 10
+                }}
+                className="sm:w-10 sm:h-10 md:w-12 md:h-12 hover:bg-black/80"
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "rgba(0,0,0,0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "rgba(0,0,0,0.7)";
+                }}
+              >
+                <svg 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="sm:w-4 sm:h-4 md:w-5 md:h-5"
+                >
+                  <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+              </button>
+              
+              {/* Right Arrow */}
+              <button 
+                onClick={nextImage}
+                style={{
+                  position: "absolute",
+                  right: "8px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  backgroundColor: "rgba(0,0,0,0.7)",
+                  border: "none",
+                  borderRadius: "50%",
+                  width: "32px",
+                  height: "32px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  zIndex: 10
+                }}
+                className="sm:w-10 sm:h-10 md:w-12 md:h-12 hover:bg-black/80"
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "rgba(0,0,0,0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "rgba(0,0,0,0.7)";
+                }}
+              >
+                <svg 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="sm:w-4 sm:h-4 md:w-5 md:h-5"
+                >
+                  <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+              </button>
+            </>
+          )}
+          
+          {/* Image Counter - Only show if more than 1 image */}
+          {images.length > 1 && (
+            <div style={{
+              position: "absolute",
+              bottom: "8px",
+              right: "8px",
+              backgroundColor: "rgba(0,0,0,0.7)",
+              color: "white",
+              padding: "4px 8px",
+              borderRadius: "12px",
+              fontSize: "12px",
+              fontWeight: "500"
+            }} className="sm:text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
+          )}
+        </>
+      ) : (
+        // Fallback when no images
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+          color: "rgba(255,255,255,0.5)"
+        }}>
+          <span className="text-sm sm:text-base md:text-lg mb-2">No Screenshots Available</span>
+          <span className="text-xs sm:text-sm">Images: {images ? images.length : 0}</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Projects Section Component
 function ProjectsSection() {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "My personal portfolio built with React and beautiful silk background animations.",
-      tech: "React, JavaScript, CSS, Silk.js",
-      image: "placeholder",
+      title: "ONIGIRI - Japanese Restaurant",
+      description: "A modern Japanese restaurant website showcasing our menu, flavors, and culture with a sleek, responsive design.",
+      tech: "React, JavaScript, CSS, Tailwind CSS, Vite",
+      images: [
+        "/screenshots/ONIGIRI/1.jpg",
+        "/screenshots/ONIGIRI/2.png", 
+        "/screenshots/ONIGIRI/3.png",
+        "/screenshots/ONIGIRI/4.png",
+        "/screenshots/ONIGIRI/5.png",
+        "/screenshots/ONIGIRI/6.png",
+        "/screenshots/ONIGIRI/7.png"
+      ],
+      liveLink: "https://oushaabdelkhaleq88.github.io/ONIGIRI", // Fixed: This is now the live site
+      githubLink: "https://github.com/oushaabdelkhaleq88/ONIGIRI" // This remains the GitHub repo
+    },
+    {
+      title: "Portfolio Showcase",
+      description: "A comprehensive portfolio website built with React and modern web technologies, featuring responsive design and smooth animations.",
+      tech: "React, JavaScript, CSS, Tailwind CSS, Vite",
+      images: [],
       liveLink: "#",
       githubLink: "#"
     },
     {
-      title: "Coming Soon",
-      description: "More exciting projects are on their way! Stay tuned for updates.",
-      tech: "React, Node.js, MongoDB",
-      image: "placeholder",
+      title: "Web Development Projects",
+      description: "Collection of various web development projects showcasing different technologies and design approaches.",
+      tech: "React, Node.js, MongoDB, JavaScript",
+      images: [],
       liveLink: "#",
       githubLink: "#"
     }
   ];
+  
+
 
   return (
     <section id="projects" style={{ 
       minHeight: "100vh", 
-      padding: "2rem 1rem",
+      padding: "4rem 2rem",
       display: "flex",
       alignItems: "center",
       position: "relative",
       zIndex: 2
     }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
+      <div style={{ maxWidth: "1600px", margin: "0 auto", width: "100%" }}>
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 md:mb-12 text-center leading-snug break-words px-2">My Projects</h2>
         
         <div style={{ 
           display: "grid", 
           gridTemplateColumns: "1fr",
-          gap: "1.5rem" 
-        }} className="md:grid-cols-2 md:gap-8">
+          gap: "2rem" 
+        }} className="lg:grid-cols-2 lg:gap-8 xl:gap-10">
           {projects.map((project, index) => (
             <div key={index} style={{
               backgroundColor: "rgba(255,255,255,0.1)",
               borderRadius: "20px",
               border: "1px solid rgba(255,255,255,0.2)",
               backdropFilter: "blur(10px)",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "transform 0.3s ease"
             }}
             onMouseEnter={(e) => {
@@ -306,30 +502,32 @@ function ProjectsSection() {
               }
             }}
             >
-              {/* Project Image Placeholder */}
-              <div style={{
-                height: "160px",
-                backgroundColor: "rgba(255,255,255,0.05)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center"
-              }} className="sm:h-48 md:h-56">
-                <span className="text-white/50 text-sm sm:text-base md:text-lg">Project Screenshot</span>
-              </div>
+              {/* Project Image Carousel */}
+              <ImageCarousel images={project.images} projectTitle={project.title} />
               
               {/* Project Content */}
-              <div style={{ padding: "1rem" }} className="sm:p-6 md:p-8">
+              <div style={{ padding: "1.5rem" }} className="sm:p-4 md:p-6">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 leading-tight">{project.title}</h3>
                 <p className="text-white/80 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm md:text-base">{project.description}</p>
                 <p className="text-blue-300 text-xs sm:text-sm mb-3 sm:mb-4">{project.tech}</p>
                 
                 <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                  <button className="px-3 sm:px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
-                    Live Demo
-                  </button>
-                  <button className="px-3 sm:px-4 py-2 bg-transparent border border-gray-500/50 text-white rounded-lg hover:bg-gray-700/30 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
+                  <a
+                    href={project.liveLink}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-3 sm:px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap inline-block text-center no-underline"
+                  >
+                    Live Site
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 sm:px-4 py-2 bg-transparent border border-gray-500/50 text-white rounded-lg hover:bg-gray-700/30 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap inline-block text-center no-underline"
+                  >
                     GitHub
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
